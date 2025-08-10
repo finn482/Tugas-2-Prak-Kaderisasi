@@ -1,0 +1,288 @@
+/* Variabel warna utama untuk tema website */
+:root {
+  --bg: #0c0c0c;
+  --ink: #e8e8e8;
+  --muted: #bdbdbd;
+  --accent: #f6e6c9;
+  --accent-2: #d7f1ff;
+  --brand: #efe8dd;
+  --card: #111111;
+  --card-ink: #ededed;
+  --grid: rgba(255,255,255,0.06);
+}
+
+/* Reset & base: Mengatur box-sizing dan tinggi dasar */
+* {
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+}
+
+/* Body: Mengatur font, warna teks, dan background gradien satu strip */
+body {
+  font-family: 'Montserrat Alternates', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  background: linear-gradient(to bottom, #121212, #0b0b0b) fixed;
+  color: var(--ink);
+  padding-top: 60px;
+}
+
+/* Container: Membatasi lebar konten utama dan memberi padding */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Navbar: Bagian navigasi di atas halaman */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background: #0d0d0d;
+  border-bottom: 1px solid #1e1e1e;
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+}
+.brand {
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+.links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  transition: background .2s, transform .2s;
+}
+.links a:hover {
+  background: #2a2a2a;
+  transform: translateY(-1px);
+}
+
+/* Semua link di halaman berwarna putih */
+a {
+  color: #fff !important;
+}
+
+/* Hero: Bagian judul besar dan deskripsi singkat di halaman utama */
+.hero {
+  padding: 40px 0 0;
+}
+.hero-title {
+  font-family: 'Merriweather', serif;
+  font-size: clamp(42px, 9vw, 120px);
+  font-weight: 900;
+  letter-spacing: 2px;
+  line-height: 1.05;
+  color: var(--brand);
+  margin: 0 0 18px;
+  white-space: normal;
+  word-break: break-word;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+.hero-grid a.text-link {
+  color: #d1f2ff;
+}
+.hero-grid a.text-link:hover {
+  text-decoration: underline;
+}
+
+/* Section: Memberi jarak vertikal pada setiap bagian utama */
+.section {
+  padding: 28px 0;
+}
+
+/* Card: Tampilan kotak untuk konten utama seperti biodata, pengalaman, dll */
+.card {
+  background: var(--card);
+  color: var(--card-ink);
+  border: 1px solid #222;
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.35);
+  padding: 18px;
+}
+
+/* Headings: Mengatur tampilan judul bagian (h2) */
+h2 {
+  font-size: 24px;
+  margin: 0 0 12px;
+  letter-spacing: .5px;
+}
+
+/* Profile: Bagian biodata diri dengan foto dan teks */
+.profile {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.avatar {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex: 0 0 auto;
+  border: 1px solid #2a2a2a;
+}
+.profile-text {
+  flex: 1 1 280px;
+  min-width: 260px;
+}
+.summary {
+  margin: 0 0 10px;
+}
+.facts {
+  margin: 0;
+  padding-left: 18px;
+}
+.facts li {
+  margin: 6px 0;
+}
+.facts a {
+  color: #bfe7ff;
+}
+.facts a:hover {
+  text-decoration: underline;
+}
+
+/* Experience list: Tampilan list pengalaman umum */
+.list {
+  margin: 0;
+  padding-left: 18px;
+}
+.list li {
+  margin: 8px 0;
+}
+
+/* Pengalaman Section: Tampilan khusus untuk pengalaman yang detail */
+.list.pengalaman {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.list.pengalaman li {
+  margin-bottom: 32px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #222;
+}
+.list.pengalaman li:last-child {
+  border-bottom: none;
+}
+.pengalaman-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2px;
+}
+.pengalaman-title {
+  font-weight: bold;
+  font-size: 1.08em;
+  margin-bottom: 2px;
+}
+.pengalaman-subtitle {
+  color: var(--muted);
+  font-size: 0.98em;
+}
+.pengalaman-tahun {
+  color: var(--muted);
+  font-size: 0.98em;
+  white-space: nowrap;
+}
+.pengalaman-deskripsi {
+  margin-top: 4px;
+  color: var(--ink);
+  font-size: 0.98em;
+}
+
+/* Table: Tampilan tabel untuk bagian pendidikan */
+.table-wrap {
+  overflow: auto;
+}
+.edu-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #242424;
+  background: #111;
+}
+.edu-table thead th {
+  background: #191919;
+  color: #f0f0f0;
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #242424;
+}
+.edu-table tbody td {
+  padding: 10px;
+  border-bottom: 1px solid #202020;
+}
+
+/* Footer: Bagian bawah halaman */
+.footer {
+  padding: 30px 0;
+  color: #9d9d9d;
+  text-align: center;
+  border-top: 1px solid #1d1d1d;
+}
+
+/* Responsive: Mengatur tampilan agar tetap bagus di layar kecil */
+@media (max-width: 800px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-strip {
+    height: 200px;
+  }
+  .profile-teaser img {
+    width: 200px;
+  }
+}
+@media (max-width: 480px) {
+  .links a {
+    padding: 6px 10px;
+  }
+  .avatar {
+    width: 130px;
+    height: 130px;
+  }
+  .hero-title {
+    font-size: clamp(32px, 7vw, 80px);
+  }
+  .summary {
+    font-size: 0.9em;
+  }
+  .facts {
+    padding-left: 12px;
+  }
+  .edu-table thead th {
+    font-size: 0.9em;
+    padding: 10px;
+  }
+  .edu-table tbody td {
+    font-size: 0.9em;
+    padding: 8px;
+  }
+}
